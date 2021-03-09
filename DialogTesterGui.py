@@ -10,6 +10,9 @@ from Tkinter import *
 from DialogStateMachine import SMDialog
 
 global var1
+global NAOQI_SIMULATION
+NAOQI_SIMULATION = False
+
 
 def start_dialog(feedback_level=10):
 
@@ -17,7 +20,7 @@ def start_dialog(feedback_level=10):
     global var1
     filename = var1.get()
 
-    sm_dialog = SMDialog(filename, 'localhost', feedback_level=feedback_level, use_getch=False) #'192.168.0.115'
+    sm_dialog = SMDialog(filename, '192.168.0.112', feedback_level=feedback_level, use_getch=False) #'192.168.0.115'
     outcome = sm_dialog.Run()
     print '\n\n**************** END OF DIALOG **********************\n'
 

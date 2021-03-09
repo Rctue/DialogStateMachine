@@ -6,7 +6,7 @@ import nao_nocv as nao
 ##import smach
 
 __author__ = 'rhcuijpers'
-__debug_no_nao__=True #False
+__debug_no_nao__=False
 
 class DoQuestion():
     def __init__(self, feedback_level=10):

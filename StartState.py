@@ -8,6 +8,8 @@ import nao_nocv as nao
 
 import os
 
+NAOQI_SIMULATION = False
+
 __author__ = 'rhcuijpers'
 
 class Start():
@@ -31,7 +33,8 @@ class Start():
         self._dialog, self._dialog_logic, self._message_logic, self._current_dialog_key = self._init_dialog(csv_file)
 
         # Check environment variable to see if this is a naoqi simulation.
-        self._naoqi_simulation = os.getenv('NAOQI_SIMULATION') is not None
+        #self._naoqi_simulation = os.getenv('NAOQI_SIMULATION') is not None
+        self._naoqi_simulation = NAOQI_SIMULATION
 
         # Dialogs that just report something have an empty dialog_logic.
         self._dialog_replies = []

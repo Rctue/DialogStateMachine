@@ -15,7 +15,7 @@ class GetAnswer():
         if log_level <= self._feedback_level:
             print(log_string)
 
-    def __init__(self, feedback_level=10, use_getch=True):
+    def __init__(self, feedback_level=10, use_getch=True,NAOQI_SIMULATION = False):
         """
         Constructor.
         """
@@ -30,7 +30,8 @@ class GetAnswer():
 
         # Set desired feedback level.
         self._feedback_level = feedback_level  # Everything with log level 0 or higher is printed.
-        self._naoqi_simulation = os.getenv('NAOQI_SIMULATION') is not None
+#        self._naoqi_simulation = os.getenv('NAOQI_SIMULATION') is not None
+        self._naoqi_simulation = NAOQI_SIMULATION
 
         # If speech recognition fails, the desired recognition result can be given through
         # the keyboard. In interactive sessions, this is done using getch_noblock() which results in unbuffered
